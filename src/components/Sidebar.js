@@ -5,9 +5,9 @@ export const Sidebar = ({ subreddits }) => {
     return (
         <div className="sidebar">
             <h3 className="sidebar-title">Subreddits</h3>
-            <ul className="sicebar-list">
+            <ul className="sidebar-list">
                 {subreddits.map(subreddit => (
-                    <li key={subreddit.id} className="sicebar-list-item">
+                    <li key={subreddit.id} className="sidebar-list-item">
                         {subreddit.name}
                     </li>
                 ))}
@@ -15,3 +15,6 @@ export const Sidebar = ({ subreddits }) => {
         </div>
     );
 };
+
+
+export default Sidebar;

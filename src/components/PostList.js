@@ -4,7 +4,7 @@ import { PostCard } from './PostCard.js'
 
 export const PostList = ({ posts }) => {
     return (
-        <div>
+        <div className="post-list">
             {posts.map(post=> (
                 <PostCard
                     key={post.id}

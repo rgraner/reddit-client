@@ -2,6 +2,7 @@ import React from 'react';
 import { Header } from '../components/Header.js';
 import { PostList } from '../components/PostList';
 import { Sidebar } from '../components/Sidebar';
+import '../index.css';
 
 
 export const App = () => {
@@ -42,3 +43,4 @@ export const App = () => {
         </div>
       )
 }
+
