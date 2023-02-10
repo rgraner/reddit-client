@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from '../components/Header.js';
 import { PostList } from '../components/PostList';
 import { Sidebar } from '../components/Sidebar';
@@ -6,32 +6,18 @@ import '../index.css';
 
 
 export const App = () => {
-    const posts = [
-        {
-          id: 1,
-          title: 'Post 1',
-          media: 'Image 1',
-          date: '2022-01-01',
-          author: 'Author 1',
-          commentsCount: 10,
-        },
-        {
-          id: 2,
-          title: 'Post 2',
-          media: 'Image 2',
-          date: '2022-01-02',
-          author: 'Author 2',
-          commentsCount: 20,
-        },
-        // Add more posts here...
-      ];
+  const [posts, setPosts] = useState([]);
+  const [subreddits, setSubreddits] = useState([]);
 
-      const subreddits = [
-        { id: 1, name: 'r/reactjs' },
-        { id: 2, name: 'r/redux' },
-        { id: 3, name: 'r/javascript' },
-        // Add more subreddits here...
-      ];
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch('https://www.reddit.com/r/popular.json');
+      const json = await res.json();
+      setPosts(json.data.children);
+      setSubreddits(json.data.children);
+    };
+    fetchData();
+  }, []);
 
       return (
         <div className="app">
@@ -43,4 +29,5 @@ export const App = () => {
         </div>
       )
 }
+
 

@@ -1,12 +1,13 @@
 import React from 'react';
 
 
-export const PostCard = ({ title, author, date, media, commentsCount }) => {
+export const PostCard = ({ title, author, date, media, subreddit, commentsCount }) => {
     return (
         <div className="post-card">
             <div className="post-card-header">
                 <h2>{title}</h2>
-                <p>{author}</p>
+                <p>posted by {author}</p>
+                <p>{subreddit}</p>
             </div>
             <div
                 className="post-card-media"
