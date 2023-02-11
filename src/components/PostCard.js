@@ -20,15 +20,3 @@ export const PostCard = ({ title, author, date, media, subreddit, commentsCount 
         </div>
     );
 };
-
-// export const PostCard = ({ title, media, date, author, commentsCount }) => {
-//     return (
-//       <div className="post-card">
-//         <h3 className="post-card-title">{title}</h3>
-//         <div className="post-card-media">{media}</div>
-//         <div className="post-card-date">{date}</div>
-//         <div className="post-card-author">posted by: {author}</div>
-//         <div className="post-card-comments-count">{commentsCount} comments</div>
-//       </div>
-//     );
-//   };

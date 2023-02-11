@@ -7,7 +7,7 @@ export const PostList = ({ posts }) => {
         <div className="post-list">
             {posts.map(post=> (
                 <PostCard
-                    key={post.data.author_fullname}
+                    key={post.data.id}
                     title={post.data.title}
                     media={post.data.url_overridden_by_dest}
                     date={post.data.created_utc}
