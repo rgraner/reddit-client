@@ -117,5 +117,6 @@ input {
 
 .sidebar-list-item {
     margin-bottom: 10px;
+    cursor: pointer;
 }
 /* Sidebar */
