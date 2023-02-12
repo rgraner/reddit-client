@@ -10,7 +10,11 @@ export const PostCard = ({ title, author, date, media, subreddit, commentsCount,
             const commentUrl = `https://www.reddit.com${urlForComments}.json`;
             const res = await fetch(commentUrl);
             const json = await res.json();
-            setComments(json[1].data.children.map(c => c.data.body));
+            setComments(json[1].data.children.map(c => ({ 
+                body: c.data.body, 
+                author: c.data.author, 
+                created: c.data.created 
+            })));
             };
         
             if (showComments) {
@@ -36,7 +40,11 @@ export const PostCard = ({ title, author, date, media, subreddit, commentsCount,
             {showComments && (
             <div className="comments">
                 {comments.map((comment, index) => (
-                <p key={index}>{comment}</p>
+                    <div key={index} className="comment">
+                        <p>{comment.body}</p>
+                        <p className="comment-author">by {comment.author}</p>
+                        <p className="comment-time">{comment.created} ago</p>
+                    </div>
                 ))}
             </div>
       )}
@@ -44,3 +52,4 @@ export const PostCard = ({ title, author, date, media, subreddit, commentsCount,
     );
 };
 
+  
