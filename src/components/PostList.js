@@ -14,6 +14,7 @@ export const PostList = ({ posts }) => {
                     author={post.data.author}
                     commentsCount={post.data.num_comments}
                     subreddit={post.data.subreddit_name_prefixed}
+                    urlForComments={post.data.permalink}
                 />
             ))}
         </div>

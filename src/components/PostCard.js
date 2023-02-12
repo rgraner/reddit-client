@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 
-export const PostCard = ({ title, author, date, media, subreddit, commentsCount }) => {
+export const PostCard = ({ title, author, date, media, subreddit, commentsCount, urlForComments }) => {
+    const [comments, setComments] = useState([]);
+    const [showComments, setShowComments] = useState(false);
+
+    useEffect(() => {
+        const fetchComments = async () => {
+            const commentUrl = `https://www.reddit.com${urlForComments}.json`;
+            const res = await fetch(commentUrl);
+            const json = await res.json();
+            setComments(json[1].data.children.map(c => c.data.body));
+            };
+        
+            if (showComments) {
+            fetchComments();
+            }
+    }, [showComments, urlForComments]);
+
     return (
         <div className="post-card">
             <div className="post-card-header">
@@ -15,8 +31,16 @@ export const PostCard = ({ title, author, date, media, subreddit, commentsCount 
             />
             <div className="post-card-footer">
                 <p>{date}</p>
-                <p>{commentsCount} comments</p>
+                <p onClick={() => setShowComments(!showComments)}>{commentsCount} comments</p>
             </div>
+            {showComments && (
+            <div className="comments">
+                {comments.map((comment, index) => (
+                <p key={index}>{comment}</p>
+                ))}
+            </div>
+      )}
         </div>
     );
 };
+
