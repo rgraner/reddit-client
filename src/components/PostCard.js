@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { timeSince } from '../utils/timeSince.js'
 
 
 export const PostCard = ({ title, author, date, media, subreddit, commentsCount, urlForComments }) => {
@@ -34,7 +35,7 @@ export const PostCard = ({ title, author, date, media, subreddit, commentsCount,
                 style={{ backgroundImage: `url(${media})`}}
             />
             <div className="post-card-footer">
-                <p>{date}</p>
+                <p>{timeSince(date)}</p>
                 <p onClick={() => setShowComments(!showComments)}>{commentsCount} comments</p>
             </div>
             {showComments && (
@@ -43,7 +44,7 @@ export const PostCard = ({ title, author, date, media, subreddit, commentsCount,
                     <div key={index} className="comment">
                         <p>{comment.body}</p>
                         <p className="comment-author">by {comment.author}</p>
-                        <p className="comment-time">{comment.created} ago</p>
+                        <p className="comment-time">{timeSince(comment.created)}</p>
                     </div>
                 ))}
             </div>
