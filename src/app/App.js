@@ -6,8 +6,11 @@ import '../index.css';
 
 export const App = () => {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [subreddits, setSubreddits] = useState([]);
   const [selectedSubreddit, setSelectedSubreddit] = useState('popular');
+  const [filteredPosts, setFilteredPosts] = useState([]);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,20 +30,41 @@ export const App = () => {
     fetchSubreddits();
   }, []);
 
+  useEffect(() => {
+    setFilteredPosts(posts);
+  }, [posts]);
+
   const onSubredditSelection = subreddit => {
     setSelectedSubreddit(subreddit);
   };
 
+  const onSearch = searchTerm => {
+    if (posts.length > 0) {
+      setFilteredPosts(
+        posts.filter(post =>
+          post.data.title.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      );
+    }
+  };
+
+  console.log('filteredPosts: ', filteredPosts)
+
   return (
     <div className="app">
-        <Header />
+        <Header onSearch={onSearch} />
         <main className="main">
-            <PostList posts={posts} />
-            <Sidebar subreddits={subreddits} onSubredditSelection={onSubredditSelection} />
+          <PostList posts={filteredPosts} />
+          <Sidebar subreddits={subreddits} onSubredditSelection={onSubredditSelection} />
         </main>
     </div>
   );
 };
 
-
-
+// {
+//   posts.length === 0 ? (
+//     <div>Loading...</div>
+//   ) : (
+//     <PostList posts={filteredPosts} />
+//   )
+// }
