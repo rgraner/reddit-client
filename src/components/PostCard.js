@@ -5,6 +5,11 @@ import { timeSince } from '../utils/timeSince.js'
 export const PostCard = ({ title, author, date, media, subreddit, commentsCount, urlForComments }) => {
     const [comments, setComments] = useState([]);
     const [showComments, setShowComments] = useState(false);
+    const [imageUrl, setImageUrl] = useState(media);
+
+    const handleImageError = () => {
+        setImageUrl("");
+      };
 
     useEffect(() => {
         const fetchComments = async () => {
@@ -36,14 +41,12 @@ export const PostCard = ({ title, author, date, media, subreddit, commentsCount,
                 <h2 >{title}</h2>    
             </div>
             {
-                media ? (
+                imageUrl ? (
                     <div className="post-card-media">
-                        <img src={media} alt=""/>
+                        <img src={imageUrl} alt="" onError={handleImageError}/>
                     </div>
                 ) : ("")
             }
-            
-                {/* style={{ backgroundImage: `url(${media})`}} */}
             <div className="post-card-footer">         
                 <p onClick={() => setShowComments(!showComments)}>{commentsCount} comments</p>
             </div>
@@ -65,12 +68,3 @@ export const PostCard = ({ title, author, date, media, subreddit, commentsCount,
     );
 };
 
-// {
-//   posts.length === 0 ? (
-//     <div>Loading...</div>
-//   ) : (
-//     <PostList posts={filteredPosts} />
-//   )
-// }
-
-  

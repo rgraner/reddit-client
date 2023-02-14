@@ -3,12 +3,6 @@
     margin: 0;
     padding: 0;
 }
-/* .app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-} */
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -61,10 +55,8 @@ input {
 
 /* PostCard */
 .post-card {
-    /* background-color: white; */
     border: 1px solid #ddd;
     border-radius: 4px;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     margin-bottom: 20px;
     overflow: hidden;
     width: 100%;
@@ -72,12 +64,9 @@ input {
 
 .post-card-author {
     font-weight: bold;
-    /* color: gray; */
 }
 
 .post-card-header {
-    /* display: flex;
-    align-items: center; */
     padding: 20px;
 }
 
@@ -103,19 +92,10 @@ input {
 .post-card-media img {
     width: 94%;
     padding: 0 20px 20px 20px;
-    /* height: 200px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; */
 }
 
 .post-card-footer {
-    /* display: flex;
-    align-items: center;
-    justify-content: space-between; */
     padding: 0 20px 20px;
-    /* background-color: #f7f7f7;
-    border-top: 1px solid #ddd; */
 }
 
 .post-card-footer p {
@@ -132,11 +112,9 @@ input {
 }
 
 /* Sidebar */
-
 .sidebar {
     width: 30%;
     padding: 20px;
-    /* background-color: #f7f7f7; */
     height: 100%;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -162,16 +140,12 @@ input {
 
 /* Comments */
 .comments {
-    /* padding: 20px; */
-    /* background-color: #f7f7f7; */
     border-top: 1px solid #ddd;
 }
 
 .comment {
-    /* margin-bottom: 20px; */
     padding: 20px;
     border-radius: 4px;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .comment p {
@@ -197,7 +171,6 @@ input {
 /* Comments */
 
 /* general */
-
 .dot {
     height: 2px;
     width: 2px;
