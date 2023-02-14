@@ -11,8 +11,10 @@ export const Header = ({ onSearch }) => {
 
   return (
     <header>
-      <img src={logo} alt="Logo" />
-      <input type="text" placeholder="Search Reddit" value={searchTerm} onChange={handleSearch} />
+      <div className='container'>
+        <img src={logo} alt="Logo" />
+        <input type="text" placeholder="Search Reddit" value={searchTerm} onChange={handleSearch} />
+      </div>
     </header>
   );
 };

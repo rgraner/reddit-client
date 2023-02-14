@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;900&display=swap");
-
+* {
+    margin: 0;
+    padding: 0;
+}
 /* .app {
     display: flex;
     flex-direction: column;
@@ -12,6 +15,9 @@ body {
 }
 
 .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     max-width: 900px;
     margin: 0 auto;
     width: 100%;
@@ -26,9 +32,7 @@ body {
 
 /* Header */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    
     padding: 20px;
     background-color: #282c34;
     color: white;
@@ -79,6 +83,7 @@ input {
 
 .post-card-top-header {
     display: flex;
+    align-items: center;
 }
 
 .post-card-header h2 {
@@ -183,4 +188,21 @@ input {
     font-size: 12px;
     color: gray;
 }
+
+.comment-footer {
+    display:flex;
+    align-items: center;
+    margin-top: 5px;
+}
 /* Comments */
+
+/* general */
+
+.dot {
+    height: 2px;
+    width: 2px;
+    background-color: grey;
+    border-radius: 50%;
+    display: inline-flex;
+    margin: 0 10px;
+}

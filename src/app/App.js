@@ -51,7 +51,7 @@ export const App = () => {
   console.log('filteredPosts: ', filteredPosts)
 
   return (
-    <div className="app">
+    <div className="">
         <Header onSearch={onSearch} />
         <main className="main">
           <PostList posts={filteredPosts} />

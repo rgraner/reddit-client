@@ -27,8 +27,10 @@ export const PostCard = ({ title, author, date, media, subreddit, commentsCount,
         <div className="post-card">
             <div className="post-card-header">
                 <div className="post-card-top-header">
-                    <p className="post-card-author">{author} |</p>
-                    <p>{subreddit} |</p>
+                    <p className="post-card-author">{author}</p>
+                    <div className="dot"/>
+                    <p>{subreddit}</p>
+                    <div className="dot"/>
                     <p>{timeSince(date)}</p>
                 </div>
                 <h2 >{title}</h2>    
@@ -50,8 +52,11 @@ export const PostCard = ({ title, author, date, media, subreddit, commentsCount,
                 {comments.map((comment, index) => (
                     <div key={index} className="comment">
                         <p>{comment.body}</p>
-                        <p className="comment-author">by {comment.author}</p>
-                        <p className="comment-time">{timeSince(comment.created)}</p>
+                        <div className="comment-footer">
+                            <p className="comment-author">{comment.author}</p>
+                            <div className="dot"/>
+                            <p className="comment-time">{timeSince(comment.created)}</p>
+                        </div>
                     </div>
                 ))}
             </div>
