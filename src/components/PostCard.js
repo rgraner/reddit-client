@@ -31,11 +31,16 @@ export const PostCard = ({ title, author, date, media, subreddit, commentsCount,
                     <p>{subreddit} |</p>
                     <p>{timeSince(date)}</p>
                 </div>
-                <h2 >{title}</h2>      
+                <h2 >{title}</h2>    
             </div>
-            <div className="post-card-media">
-                <img src={media} alt=""/>
-            </div>
+            {
+                media ? (
+                    <div className="post-card-media">
+                        <img src={media} alt=""/>
+                    </div>
+                ) : ("")
+            }
+            
                 {/* style={{ backgroundImage: `url(${media})`}} */}
             <div className="post-card-footer">         
                 <p onClick={() => setShowComments(!showComments)}>{commentsCount} comments</p>

@@ -81,8 +81,9 @@ input {
 }
 
 .post-card-header h2 {
-    margin: 0;
-    font-size: 32px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 28px;
     font-weight: 900;
 }
 
@@ -94,8 +95,8 @@ input {
 
 
 .post-card-media img {
-    width: 100%;
-    padding: 20px;
+    width: 94%;
+    padding: 0 20px 20px 20px;
     /* height: 200px;
     background-repeat: no-repeat;
     background-position: center;
