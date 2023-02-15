@@ -21,7 +21,7 @@ body {
     display: flex;
     width: 100%;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 20px auto 0;
 }
 
 /* Header */
@@ -32,7 +32,7 @@ header {
 }
 
 header img {
-    width: 150px;
+    width: 130px;
 }
 
 h1 {
@@ -42,7 +42,7 @@ h1 {
 }
 
 input {
-    width: 200px;
+    width: 220px;
     height: 36px;
     padding: 10px;
     border: none;
@@ -52,13 +52,18 @@ input {
 }
 /* Header */
 
+/* PostList */
+/* .post-list {
+    width: 100%;
+} */
+
 /* PostCard */
 .post-card {
     border: 1px solid #ddd;
     border-radius: 4px;
     margin-bottom: 20px;
     overflow: hidden;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .post-card-author {
@@ -105,15 +110,13 @@ input {
 }
 /* PostCard */
 
-/* PostList */
-.post-list {
-    width: 100%;
-}
+
 
 /* Sidebar */
 .sidebar {
-    width: 30%;
-    padding: 20px;
+    min-width: 220px;
+    padding-left: 20px;
+    padding-top: 20px;
     height: 100%;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -180,14 +183,21 @@ input {
 }
 
 @media only screen and (max-width: 940px) {
+    .main {
+        flex-flow: column-reverse wrap;
+    }
+
     .post-list {
+        margin-right: 20px;  
         margin-left: 20px;
-        margin-right: 20px;
     }
 
     .sidebar {
-        display: none;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        flex-flow: row-reverse;
     }
+
   }
 
 @media only screen and (max-width: 600px) {
