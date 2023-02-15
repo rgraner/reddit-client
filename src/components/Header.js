@@ -13,7 +13,10 @@ export const Header = ({ onSearch }) => {
     <header>
       <div className='header-container'>
         <img src={logo} alt="Logo" />
-        <input type="text" placeholder="Search Reddit" value={searchTerm} onChange={handleSearch} />
+        <div className="header-right-side">
+        <a href="https://github.com/rgraner/reddit-client" target="_blank" title="Github Profile"><i class="fa-brands fa-github"></i></a>
+          <input type="text" placeholder="Search Reddit" value={searchTerm} onChange={handleSearch} />
+        </div>
       </div>
     </header>
   );
