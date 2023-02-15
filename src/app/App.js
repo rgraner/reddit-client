@@ -48,7 +48,6 @@ export const App = () => {
     }
   };
 
-  console.log('filteredPosts: ', filteredPosts)
 
   return (
     <div className="">
@@ -60,11 +59,3 @@ export const App = () => {
     </div>
   );
 };
-
-// {
-//   posts.length === 0 ? (
-//     <div>Loading...</div>
-//   ) : (
-//     <PostList posts={filteredPosts} />
-//   )
-// }

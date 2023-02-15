@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../images/redditminimal_logo.png';
+import logo from '../images/reddit-c_logo.png';
 
 export const Header = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -11,7 +11,7 @@ export const Header = ({ onSearch }) => {
 
   return (
     <header>
-      <div className='container'>
+      <div className='header-container'>
         <img src={logo} alt="Logo" />
         <input type="text" placeholder="Search Reddit" value={searchTerm} onChange={handleSearch} />
       </div>

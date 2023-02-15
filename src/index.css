@@ -8,7 +8,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.container {
+.header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,7 +26,6 @@ body {
 
 /* Header */
 header {
-    
     padding: 20px;
     background-color: #282c34;
     color: white;
@@ -179,3 +178,31 @@ input {
     display: inline-flex;
     margin: 0 10px;
 }
+
+@media only screen and (max-width: 940px) {
+    .post-list {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .sidebar {
+        display: none;
+    }
+  }
+
+@media only screen and (max-width: 600px) {
+    .header-container {
+        /* display: block;
+        text-align: center; */
+        flex-direction: column;
+    }
+
+    header img {
+        margin-bottom: 20px;
+    }
+
+    header input {
+        margin-top: 0;
+    }
+}
+
