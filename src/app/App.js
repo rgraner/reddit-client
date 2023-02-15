@@ -6,7 +6,6 @@ import '../index.css';
 
 export const App = () => {
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [subreddits, setSubreddits] = useState([]);
   const [selectedSubreddit, setSelectedSubreddit] = useState('popular');
   const [filteredPosts, setFilteredPosts] = useState([]);
