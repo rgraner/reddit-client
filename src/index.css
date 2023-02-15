@@ -248,6 +248,7 @@ input {
 
     .header-right-side a {
         margin-top: 20px;
+        margin-right: 0;
     }
 
     .sidebar {
