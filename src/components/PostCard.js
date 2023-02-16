@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { timeSince } from '../utils/timeSince.js'
 
 
@@ -51,19 +52,19 @@ export const PostCard = ({ title, author, date, media, subreddit, commentsCount,
                 <p onClick={() => setShowComments(!showComments)}>{commentsCount} comments</p>
             </div>
             {showComments && (
-            <div className="comments">
-                {comments.map((comment, index) => (
-                    <div key={index} className="comment">
-                        <p>{comment.body}</p>
-                        <div className="comment-footer">
-                            <p className="comment-author">{comment.author}</p>
-                            <div className="dot"/>
-                            <p className="comment-time">{timeSince(comment.created)}</p>
+                <div className="comments">
+                    {comments.map((comment, index) => (
+                        <div key={index} className="comment">
+                            <ReactMarkdown children={comment.body} />
+                            <div className="comment-footer">
+                                <p className="comment-author">{comment.author}</p>
+                                <div className="dot"/>
+                                <p className="comment-time">{timeSince(comment.created)}</p>
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
-      )}
+                    ))}
+                </div>
+            )}
         </div>
     );
 };
