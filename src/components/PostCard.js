@@ -19,7 +19,7 @@ export const PostCard = ({ title, author, date, media, subreddit, commentsCount,
           const json = await res.json();
           setComments(json[1].data.children.map((c) => {
             const commentText = c.data.body || '';
-            const imageUrlRegex = /((?:https?:\/\/(?:[a-z0-9\-]+\.)+[a-z]{2,}(?:\/[\w\d\-\._\?\,\'\/\\\+&%\$#\=~]*)?)\.(?:jpe?g|png|gif)(?:\?.+)?)/i;
+            const imageUrlRegex = /((?:https?:\/\/(?:[a-z0-9]+\.)+[a-z]{2,}(?:\/[\w\d\-_\\&%#~]*)?)\.(?:jpe?g|png|gif)(?:\?.+)?)/i;
             const match = commentText.match(imageUrlRegex);
             const commentImageUrl = match ? match[1].replace(/&amp;/g, '&') : null;
             const commentTextWithoutImageUrl = match ? commentText.replace(imageUrlRegex, '') : commentText || '';
