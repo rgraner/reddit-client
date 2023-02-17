@@ -12,22 +12,31 @@ export const PostCard = ({ title, author, date, media, subreddit, commentsCount,
         setImageUrl("");
       };
 
-    useEffect(() => {
+      useEffect(() => {
         const fetchComments = async () => {
-            const commentUrl = `https://www.reddit.com${urlForComments}.json`;
-            const res = await fetch(commentUrl);
-            const json = await res.json();
-            setComments(json[1].data.children.map(c => ({ 
-                body: c.data.body, 
-                author: c.data.author, 
-                created: c.data.created 
-            })));
+          const commentUrl = `https://www.reddit.com${urlForComments}.json`;
+          const res = await fetch(commentUrl);
+          const json = await res.json();
+          setComments(json[1].data.children.map((c) => {
+            const commentText = c.data.body || '';
+            const imageUrlRegex = /((?:https?:\/\/(?:[a-z0-9\-]+\.)+[a-z]{2,}(?:\/[\w\d\-\._\?\,\'\/\\\+&%\$#\=~]*)?)\.(?:jpe?g|png|gif)(?:\?.+)?)/i;
+            const match = commentText.match(imageUrlRegex);
+            const commentImageUrl = match ? match[1].replace(/&amp;/g, '&') : null;
+            const commentTextWithoutImageUrl = match ? commentText.replace(imageUrlRegex, '') : commentText || '';
+
+            return {
+              text: commentTextWithoutImageUrl.trim(),
+              imageUrl: commentImageUrl,
+              author: c.data.author,
+              created: c.data.created,
             };
-        
-            if (showComments) {
-            fetchComments();
-            }
-    }, [showComments, urlForComments]);
+          }));
+        };
+    
+        if (showComments) {
+          fetchComments();
+        }
+      }, [showComments, urlForComments]);
 
     return (
         <div className="post-card">
@@ -52,19 +61,26 @@ export const PostCard = ({ title, author, date, media, subreddit, commentsCount,
                 <p onClick={() => setShowComments(!showComments)}>{commentsCount} comments</p>
             </div>
             {showComments && (
-                <div className="comments">
-                    {comments.map((comment, index) => (
-                        <div key={index} className="comment">
-                            <ReactMarkdown children={comment.body} />
-                            <div className="comment-footer">
-                                <p className="comment-author">{comment.author}</p>
-                                <div className="dot"/>
-                                <p className="comment-time">{timeSince(comment.created)}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            )}
+              <div className="comments">
+                {comments.map((comment, index) => (
+                  <div key={index} className="comment">
+                    {comment.text && (
+                      <ReactMarkdown children={comment.text} />
+                    )}
+                    {comment.imageUrl && (
+                      <div className="comment-image">
+                        <img src={comment.imageUrl} alt="" />
+                      </div>
+                    )}
+                    <div className="comment-footer">
+                      <p className="comment-author">{comment.author}</p>
+                      <div className="dot" />
+                      <p className="comment-time">{timeSince(comment.created)}</p>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          )}
         </div>
     );
 };

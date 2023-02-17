@@ -153,6 +153,7 @@ input {
 /* Comments */
 .comments {
     border-top: 1px solid #ddd;
+    word-break: break-word;
 }
 
 .comment {
@@ -163,6 +164,9 @@ input {
 .comment p {
     margin: 0;
     font-size: 14px;
+}
+.comment-image img{
+    width:150px
 }
 
 .comment-author {
