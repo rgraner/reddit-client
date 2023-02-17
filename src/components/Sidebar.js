@@ -24,6 +24,7 @@ export const Sidebar = ({ subreddits, onSubredditSelection }) => {
             <div className="sidebar">
                 <h3 className="sidebar-title">Subreddits</h3>
                 <select className="subreddit-dropdown" onChange={(e) => onSubredditSelection(e.target.value)}>
+                    <option value="Choose subreddit...">Choose subreddit...</option>
                     {subreddits.map(subreddit => (
                         <option key={subreddit.data.id} value={subreddit.data.subreddit}>
                             {subreddit.data.subreddit}

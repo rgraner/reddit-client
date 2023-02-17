@@ -269,4 +269,16 @@ input {
         text-align: center;
         padding-left: 0;
     }
+
+    .post-card-top-header {
+        display: inline;
+    }
+
+    .post-card-top-header .dot{
+        display: none;
+    }
+
+    .post-card-media img {
+        padding: 0 10px 10px 10px;
+    }
 }
