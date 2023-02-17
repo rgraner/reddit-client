@@ -47,10 +47,13 @@ export const App = () => {
     }
   };
 
+  const onLogoClick = subreddit => {
+    setSelectedSubreddit(subreddit);
+  };
 
   return (
     <div className="">
-        <Header onSearch={onSearch} />
+        <Header onSearch={onSearch} onLogoClick={onLogoClick} />
         <main className="main">
           <PostList posts={filteredPosts} />
           <Sidebar subreddits={subreddits} onSubredditSelection={onSubredditSelection} />
@@ -58,3 +61,4 @@ export const App = () => {
     </div>
   );
 };
+

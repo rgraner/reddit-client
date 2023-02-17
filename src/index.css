@@ -33,6 +33,7 @@ header {
 
 header img {
     width: 130px;
+    cursor: pointer;
 }
 
 h1 {
@@ -238,7 +239,7 @@ input {
         background-color: white;
       }
       
-      .subreddit-dropdown option {
+    .subreddit-dropdown option {
         font-size: 14px;
       }
 
