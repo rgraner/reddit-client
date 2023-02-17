@@ -6,7 +6,7 @@ export const Sidebar = ({ subreddits, onSubredditSelection }) => {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth < 941) {
+            if (window.innerWidth < 641) {
                 setIsDropdown(true);
             } else {
                 setIsDropdown(false);

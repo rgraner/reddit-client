@@ -14,7 +14,7 @@ export const Header = ({ onSearch }) => {
       <div className='header-container'>
         <img src={logo} alt="Logo" />
         <div className="header-right-side">
-        <a href="https://github.com/rgraner/reddit-client" title="Github Profile"><i className="fa-brands fa-github"></i></a>
+        <a href="https://github.com/rgraner/reddit-client" title="Github Reddit-Client"><i className="fa-brands fa-github"></i></a>
           <input type="text" placeholder="Search Reddit" value={searchTerm} onChange={handleSearch} />
         </div>
       </div>
