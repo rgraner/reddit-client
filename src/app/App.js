@@ -9,6 +9,8 @@ export const App = () => {
   const [subreddits, setSubreddits] = useState([]);
   const [selectedSubreddit, setSelectedSubreddit] = useState('popular');
   const [filteredPosts, setFilteredPosts] = useState([]);
+   // state to update the dropdown when logo is clicked
+   const [selectedDropdownSubreddit, setSelectedDropdownSubreddit] = useState('popular');
 
 
   useEffect(() => {
@@ -35,6 +37,7 @@ export const App = () => {
 
   const onSubredditSelection = subreddit => {
     setSelectedSubreddit(subreddit);
+    setSelectedDropdownSubreddit(subreddit)
   };
 
   const onSearch = searchTerm => {
@@ -49,6 +52,7 @@ export const App = () => {
 
   const onLogoClick = subreddit => {
     setSelectedSubreddit(subreddit);
+    setSelectedDropdownSubreddit(subreddit);
   };
 
   return (
@@ -56,7 +60,11 @@ export const App = () => {
         <Header onSearch={onSearch} onLogoClick={onLogoClick} />
         <main className="main">
           <PostList posts={filteredPosts} />
-          <Sidebar subreddits={subreddits} onSubredditSelection={onSubredditSelection} />
+          <Sidebar
+            subreddits={subreddits}
+            selectedSubreddit={selectedDropdownSubreddit}
+            onSubredditSelection={onSubredditSelection}
+          />
         </main>
     </div>
   );

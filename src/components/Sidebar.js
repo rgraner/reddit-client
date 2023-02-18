@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-export const Sidebar = ({ subreddits, onSubredditSelection }) => {
+export const Sidebar = ({ subreddits, onSubredditSelection, setSelectedSubreddit, selectedSubreddit }) => {
     const [isDropdown, setIsDropdown] = useState(false);
 
     useEffect(() => {
@@ -23,8 +23,15 @@ export const Sidebar = ({ subreddits, onSubredditSelection }) => {
         return (
             <div className="sidebar">
                 <h3 className="sidebar-title">Subreddits</h3>
-                <select className="subreddit-dropdown" onChange={(e) => onSubredditSelection(e.target.value)}>
-                    <option value="Choose subreddit...">Choose subreddit...</option>
+                <select
+                    className="subreddit-dropdown"
+                    value={selectedSubreddit}
+                    onChange={(e) => {
+                        onSubredditSelection(e.target.value);
+                        setSelectedSubreddit(e.target.value);
+                    }}
+                >
+                    <option value="popular">popular</option>
                     {subreddits.map(subreddit => (
                         <option key={subreddit.data.id} value={subreddit.data.subreddit}>
                             {subreddit.data.subreddit}
@@ -48,3 +55,4 @@ export const Sidebar = ({ subreddits, onSubredditSelection }) => {
         </div>
     );
 };
+
