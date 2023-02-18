@@ -1,46 +1,43 @@
-# Getting Started with Create React App and Redux
+# **Reddit-Client**
+### About
+This project is a client app that interacts with the Reddit API to show subreddit posts and comments.
+This is a portfolio project, part of the Codecademy Full-stack Engineer Course.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+### Wireframe
+![wireframe](https://github.com/rgraner/reddit-client/blob/main/public/reddit_client_wireframe.png)
 
-## Available Scripts
+### Technologies Used
+- React
+- react-markdown
+- React-DOM
 
-In the project directory, you can run:
+### Features
+- Search Reddit to find posts
+- Dropdown to select subreddits
+- Click on the header logo to refresh the page
+- Show the media of the post
+- Expand post to show comments
 
-### `npm start`
+This client app fetches the posts and the subreddits data from the Reddit API. The user can search for the specific posts, select subreddits from the dropdown, and click on the logo to refresh the page. The media of the post is shown and the post can be expanded to show the comments.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The post card shows the author, subreddit, and the time since the post was created.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Future Enhancements
+- Add videos to the posts
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Getting Started
+To run the Reddit-Client app locally, follow the below steps:
 
-### `npm run build`
+Clone the GitHub repository
+Install all the required dependencies using npm install
+Run the app in development mode using npm start
+Open http://localhost:3000 to view it in the browser.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Reddit API was used to fetch the data for the posts and subreddits.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
