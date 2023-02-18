@@ -13,12 +13,10 @@ This is a portfolio project, part of the Codecademy Full-stack Engineer Course.
 
 ### Features
 - Search Reddit to find posts
-- Dropdown to select subreddits
-- Click on the header logo to refresh the page
-- Show the media of the post
+- Dropdown to select subreddits in small screen
 - Expand post to show comments
 
-This client app fetches the posts and the subreddits data from the Reddit API. The user can search for the specific posts, select subreddits from the dropdown, and click on the logo to refresh the page. The media of the post is shown and the post can be expanded to show the comments.
+This client app fetches the posts and the subreddits data from the Reddit API. The user can search for the specific posts, select subreddits from the dropdown. The image of the post is shown and the post can be expanded to show the comments.
 
 The post card shows the author, subreddit, and the time since the post was created.
 
