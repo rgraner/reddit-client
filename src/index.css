@@ -31,11 +31,6 @@ header {
     color: white;
 }
 
-header img {
-    width: 130px;
-    cursor: pointer;
-}
-
 .logo {
     font-size:  26px;
     font-weight: 900;
@@ -73,18 +68,12 @@ input {
 }
 /* Header */
 
-/* PostList */
-/* .post-list {
-    width: 100%;
-} */
-
 /* PostCard */
 .post-card {
     border: 1px solid #ddd;
     border-radius: 4px;
     margin-bottom: 20px;
     overflow: hidden;
-    /* width: 100%; */
 }
 
 .post-card-author {
@@ -238,9 +227,7 @@ input {
 
     .subreddit-dropdown {
         width: 220px;
-        /* height: 36px; */
         padding: 20px;
-        /* border: none; */
         border-radius: 4px;
         font-size: 14px;
         outline: none;
@@ -255,12 +242,10 @@ input {
 
 
     .header-container {
-        /* display: block;
-        text-align: center; */
         flex-direction: column;
     }
 
-    header img {
+    .logo {
         margin-bottom: 20px;
     }
 
