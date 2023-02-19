@@ -5,6 +5,7 @@ This is a portfolio project, part of the Codecademy Full-stack Engineer Course.
 
 ### Wireframe
 ![wireframe](https://github.com/rgraner/reddit-client/blob/main/public/reddit_client_wireframe.png)
+[visite live](https://tranquil-phoenix-f538cd.netlify.app/)
 
 ### Technologies Used
 - React
